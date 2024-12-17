@@ -1,6 +1,7 @@
 "use client"
 import React, { useState } from "react";
-import logo from '../../images/IEFK25- Logo png (1).avif';
+// import logo from '../../images/IEFK25- Logo png (1).avif';
+import Image from 'next/image';
 
 
 // const Admin = true;
@@ -14,7 +15,14 @@ const Navbar = () => {
     <nav className="custom-gradient text-white px-4 sm:px-8 ">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <a href="/component/home">
-          <img src={logo.src} alt="logo" style={{ height: '80px', width: '140px' }} />
+        <div style={{ position: 'relative', width: '200px', height: '100px' }}>
+  <Image
+    src="/_next/static/media/IEFK25- Logo png (1).687209c4.avif"
+    alt="IEFK Logo"
+    fill
+    style={{ objectFit: 'contain' }} // or 'cover', based on your layout needs
+  />
+</div>
         </a>
 
         <div className="sm:hidden">

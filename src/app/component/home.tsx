@@ -1,5 +1,6 @@
 import React from "react";
-import img from '../../images/fe9502_7788884ebccd45d5a5e86317b9014c7f~mv2.jpg'
+// import img from '../../images/fe9502_7788884ebccd45d5a5e86317b9014c7f~mv2.jpg'
+import Image from 'next/image';
 
 
 const HomePage = () => {
@@ -15,11 +16,14 @@ const HomePage = () => {
 
       
       <div className="sm:w-1/2 mt-8 sm:mt-0 flex justify-center">
-          <img
-            src={img.src}
-            alt="Placeholder Image"
-            className="rounded-lg shadow-lg"
-          />
+      <div style={{ position: 'relative', width: '100%', height: '400px' }}>
+  <Image
+    src="/_next/static/media/fe9502_7788884ebccd45d5a5e86317b9014c7f~mv2.1aa46bcc.jpg"
+    alt="Description"
+    fill
+    style={{ objectFit: 'cover' }} // or 'contain' based on your layout needs
+  />
+</div>
         </div>
     </div>
   );
