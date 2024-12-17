@@ -2,6 +2,9 @@
 import React, { useState } from "react";
 // import logo from '../../images/IEFK25- Logo png (1).avif';
 import Image from 'next/image';
+// import { useRouter } from 'next/navigation';
+import Link from 'next/link'
+
 
 
 // const Admin = true;
@@ -10,6 +13,9 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
+  
+  
+
 
   return (
     <nav className="custom-gradient text-white px-4 sm:px-8 ">
@@ -63,12 +69,10 @@ const Navbar = () => {
             isOpen ? "flex" : "hidden"
           }`}
         >
-          <a
-            href="/component/download"
-            className="block py-2 px-4 sm:py-0 sm:px-0 hover:bg-gray-700 rounded sm:hover:bg-transparent"
-          >
-            Download
-          </a>
+          <Link href="/download">
+   download
+</Link>
+
           {/* {Admin && (
             <a
               href="/component/scan"
