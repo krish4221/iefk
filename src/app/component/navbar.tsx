@@ -15,14 +15,16 @@ const Navbar = () => {
     <nav className="custom-gradient text-white px-4 sm:px-8 ">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <a href="/component/home">
-        <div style={{ position: 'relative', width: '200px', height: '100px' }}>
+       
   <Image
     src="/_next/static/media/IEFK25- Logo png (1).687209c4.avif"
     alt="IEFK Logo"
-    fill
-    style={{ objectFit: 'contain' }} // or 'cover', based on your layout needs
+    
+  width={200} // The natural width of the image
+  height={100} // The natural height of the image
+  layout="responsive" // or 'cover', based on your layout needs
   />
-</div>
+
         </a>
 
         <div className="sm:hidden">
