@@ -1,4 +1,5 @@
 "use client"
+
 import React, { useState } from 'react';
 import html2pdf from 'html2pdf.js';
 import QRCode from 'qrcode';
@@ -45,14 +46,20 @@ function DownloadPage() {
         
         setTimeout(() => {
           const element = document.getElementById('pdf-content');
-          const options = {
-            margin: 0.5,
-            filename: `${data.name}-details.pdf`,
-            html2canvas: { scale: 1 },
-            jsPDF: { unit: 'cm', format: [14.8, 10.5], orientation: 'portrait' },
-          };
-          html2pdf().set(options).from(element).save();
+          if (element) {
+            const options = {
+              margin: 0.5,
+              filename: `${data.name}-details.pdf`,
+              html2canvas: { scale: 1 },
+              jsPDF: { unit: 'cm', format: [14.8, 10.5] as [number, number], orientation: 'portrait' },
+            };
+            // Pass the element to html2pdf() directly
+            html2pdf(element).set(options).save(); // Correct use of html2pdf with element
+          } else {
+            console.error('Element not found');
+          }
         }, 0);
+        
 
         setError('');
       } else {
